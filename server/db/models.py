@@ -206,7 +206,7 @@ class Submission(Base):
 
     __table_args__ = (
         CheckConstraint(
-            "language IN ('python', 'javascript')",
+            "language IN ('python', 'javascript', go)",
             name="ck_submissions_language",
         ),
         CheckConstraint(

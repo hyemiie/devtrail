@@ -36,6 +36,3 @@ app = FastAPI(
 )
 
 register_exception_handlers(app)
-
-# app.include_router(verify.router, prefix="/v1", tags=["verify"])
-# app.include_router(users.router, prefix="/v1", tags=["Users"])
