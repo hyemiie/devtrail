@@ -51,6 +51,7 @@ async def get_question_details(number:int):
             questions_array.append(questions.get("question", {}).get("content"))
 
         return questions_array
+    
     except Exception as e:
         print(f'Error {e}')
 
