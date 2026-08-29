@@ -1,15 +1,20 @@
 import os
+import uuid
 from groq import Groq
 from dotenv import load_dotenv
+
+from server.controller.chat import create_chat, createChat
 
 load_dotenv()
 
 client = Groq(
     api_key=os.getenv("GROQ_URL")
 )
+    
 
 
-def call_grok(content:str):
+
+async def call_grok_chat(content:str, room_id : uuid.UUID):
     completion = client.chat.completions.create(
         model="openai/gpt-oss-120b",
         messages=[
@@ -25,9 +30,18 @@ def call_grok(content:str):
         stream=True,
         stop=None
     )
+    chat_details = {
+        "room_id": room_id, 
+        "sender": "system",
+        "content" :""
+    }
 
     for chunk in completion:
-        print(chunk.choices[0].delta.content or "", end="")
+        groq_response = chunk.choices[0].delta.content or "", end=""
+        chat_details["content"]= groq_response
+        print("chat_details", chat_details)
+        save_chat =  await create_chat(chat_detail=chat_details)
+        print ('groq', groq_response, save_chat)
 
 
-call_grok("hello")
+call_grok_chat("hello")

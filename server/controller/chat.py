@@ -28,7 +28,7 @@ class ChatDetail(BaseModel):
     content: str
     sender: str
 
-@router.post('/')
+
 async def create_chat(chat_detail:createChat ):
     print("chat_detail", chat_detail)
 
@@ -43,6 +43,18 @@ async def create_chat(chat_detail:createChat ):
         await session.commit()
 
         print(f"chat: {chat}")
+
+
+   
+@router.post('/')
+async def create_chat(chat_detail:createChat ):
+    try:
+          save_chat_response = await create_chat(chat_detail= chat_detail)
+          print("chat_response", save_chat_response)
+    except Exception as e:
+         print(f'Error {e}')
+
+    
 
    
 
