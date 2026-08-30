@@ -4,7 +4,6 @@ from db.session import engine, AsyncSessionLocal
 from sqlalchemy import text
 
 async def get_user(id: uuid.UUID):
-    print('received details', id)
   
     async with AsyncSessionLocal() as session:
            result = await session.execute(

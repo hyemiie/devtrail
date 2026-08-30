@@ -39,9 +39,4 @@ async def call_grok_chat(content:str, room_id : uuid.UUID):
     for chunk in completion:
         groq_response = chunk.choices[0].delta.content or "", end=""
         chat_details["content"]= groq_response
-        print("chat_details", chat_details)
         save_chat =  await create_chat(chat_detail=chat_details)
-        print ('groq', groq_response, save_chat)
-
-
-call_grok_chat("hello")
