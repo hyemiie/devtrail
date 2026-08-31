@@ -30,7 +30,6 @@ class ChatDetail(BaseModel):
 
 
 async def create_chat(chat_detail:createChat ):
-    print("chat_detail", chat_detail)
 
     async with AsyncSessionLocal as session:
         result = await session.execute(text("""
@@ -62,8 +61,6 @@ async def create_chat(chat_detail:createChat ):
 async def update_chat(chat_details: ChatDetail, chat_id : uuid.UUID):
     updates = chat_details.model_dump(exclude_unset=True)
 
-    print("update chat",updates)
-
     for field, value in updates.items():
         print(field, value)
     
@@ -84,9 +81,7 @@ async def update_chat(chat_details: ChatDetail, chat_id : uuid.UUID):
 
 
 @router.get("/chat/{id}")
-async def get_chat(id: uuid.UUID):
-    print('received details', id)
-  
+async def get_chat(id: uuid.UUID):  
     async with AsyncSessionLocal() as session:
            result = await session.execute(
         text("""

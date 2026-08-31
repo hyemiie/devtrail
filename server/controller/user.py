@@ -51,6 +51,7 @@ async def create_user(user_details:UserDetail ):
         print(f"user_id: {user_id}")
 
         return user_id
+    
 @router.post("/login")
 async def user_login(email: str, password: str):
 
