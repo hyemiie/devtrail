@@ -1,0 +1,12 @@
+.hero{
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+
+    .miniHeroDiv{
+        display: flex;
+        justify-content: space-between;
+        align-items:last baseline;
+
+    }
+}

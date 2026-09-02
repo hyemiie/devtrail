@@ -1,0 +1,65 @@
+*{
+    
+}
+
+
+.mini-box{
+    background-color: rgb(239, 239, 235);
+    width: 350px;
+    text-align: left;
+    border-radius: 12px;
+    height: fit-content;
+    
+    header{
+        border-bottom: 1px solid black;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: rgb(184, 183, 182);
+        padding: 4px;
+        padding-left: 20px;
+
+    }
+
+    .box-text{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .box-desc{
+        text-overflow: wrap;
+        overflow-wrap: break-word;
+        font-weight: 600;
+    }
+    .sub-box-desc{
+        overflow-wrap: break-word;
+    }
+
+    ul{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: space-between;
+        padding: 0;
+        li{
+            list-style: none;
+            background-color: rgb(255, 255, 255);
+            margin-right: 10px;
+            margin-bottom: 10px;
+            width: fit-content;
+            padding: 2px;
+            padding-right: 10px;
+        }
+    }
+
+    .code-box{
+        background-color: rgb(255, 251, 251);
+        padding: 9px;
+
+        code{
+        }
+    }
+
+    .code-comment{
+        font-weight: 400;
+        color: rgb(158, 159, 160);
+    }
+}
