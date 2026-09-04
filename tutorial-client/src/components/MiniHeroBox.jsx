@@ -12,7 +12,6 @@ export const MiniHeroBox = ({ boxDetails }) => {
           Real LeetCode problems, a built-in IDE, and every solution committed
           straight to your own git history.{" "}
         </p>
-        {/* <p className='sub-box-desc'> Automation and full-stack contractor based in Varna</p> */}
         <ul>
           <li>Python</li>
           <li>JavaScript</li>
@@ -24,7 +23,6 @@ export const MiniHeroBox = ({ boxDetails }) => {
           <br />
           <code>hello : "Cape Town ZA"</code>
           <br />
-          {/* <code>hello : "Cape Town ZA"</code> */}
         </div>
         <p className="code-comment">
           // Built-in checkpoints that keep you moving instead of stalling.
